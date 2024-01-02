@@ -1,5 +1,7 @@
 package com.study.ch04;
 
+import javax.swing.*;
+
 public class Operation06 {
 
     public static void main(String[] args) {
@@ -10,7 +12,10 @@ public class Operation06 {
         *  //
         * */
 
+        Spring name = null;
+
         System.out.println(name == null);
         System.out.println(name == null);
+        System.out.println("테스트 코드 작성");
     }
 }
