@@ -10,8 +10,7 @@ public class Operation06 {
         *  //
         * */
 
-
-
-
+        System.out.println(name == null);
+        System.out.println(name == null);
     }
 }
