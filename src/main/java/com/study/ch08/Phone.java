@@ -5,6 +5,7 @@ public class Phone {
     String company;
     String modelName;
 
+    //생성자
     Phone(String company, String modelName) { // Alr+ Ins -> construct 단축기
         this.company = company;
         this.modelName = modelName;
