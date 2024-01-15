@@ -1,0 +1,91 @@
+int emptyIndex = 0;
+                for(int i = 0; i < cars.length; i++) { //저장 공간에 빈공간이 있는곳을 찾기
+                    if (cars[i] == null) {
+                        emptyIndex = i;
+                        break; //빈곳(null)이라면 브레이크
+                    }                    
+                }
+                cars[emptyIndex] = new Car(model, color);
+                System.out.println(cars[emptyIndex].toString());
+
+----------------------------------------------------------------
+
+Scanner scanner = new Scanner(System.in);
+        String selectedMenu = null;
+        boolean loopFlag = true;
+
+//        Car car1 = null; //등록한 정보 여기에 대입(저장)
+//        Car car2 = null; //등록한 정보 여기에 대입(저장)
+//        Car car3 = null; //등록한 정보 여기에 대입(저장)
+
+        Car[] cars = new Car[3]; //등록한 정보를 여기에 대입(저장)
+
+
+        while (loopFlag) {
+            System.out.println("자동차 관리 프로그램");
+            System.out.println("1. 자동차 등록");
+            System.out.println("2. 자동차 조회");
+            System.out.println("q. 프로그램 종료");
+            System.out.print("메뉴 선택 >>> ");
+            selectedMenu = scanner.nextLine();
+            if("q".equalsIgnoreCase(selectedMenu)) {
+                System.out.println("프로그램 종료중...");
+                loopFlag = false;
+                
+            }else if ("1".equals(selectedMenu)) {
+                System.out.println("<<< 자동차 등록 페이지 >>>");
+                int emptyCount = 0;
+                String model = null;
+                String color = null;
+                
+                for(int i = 0; i < cars.length; i++){
+                    if(cars[i] == null) {
+                        emptyCount++;
+                    }
+                }
+                
+                if(emptyCount == 0) { //저장 빈 공간이 없다면
+                    System.out.println("더이상 등록할 수 없습니다");
+                    continue; //break 걸면 while문이 종료되기때문에 coutinue(띄어넘기)문으로 한다
+                }
+                
+                System.out.print("모뎅 명 >>> ");
+                model = scanner.nextLine();
+                System.out.print("색상 >>> ");
+                color = scanner.nextLine();
+
+                Car car = new Car(model, color);
+                System.out.println(car.toString());
+
+                for(int i = 0; i < cars.length; i++) { //저장 공간에 빈공간이 있는곳을 찾기
+                    if(cars[i] == null) {
+                        cars[i] = car;
+                        break; //빈곳(null)이라면 브레이크
+                    }
+                }
+
+            }else if ("2".equals(selectedMenu)) {
+                System.out.println("<<< 자동차 조회 페이지 >>>");
+                for(int i = 0; i < cars.length; i++) {
+                    System.out.print("[" + i + "]");
+                    if (cars[i] == null) {
+                        System.out.println("등록된 정보가 없습니다");
+                        continue; //null인 경우 띄어넘기(continue)
+                    }
+                    System.out.println(cars[i].toString()); //null인 경우 출력이 안된다
+                }
+
+            }else {
+                System.out.println("다시 입력하세요.");
+            }
+        }
+        System.out.println("프로그램이 종료되었습니다.")
+
+--------------------------------------------------------------------
+void showDeviceState() { //★★★★오버라이딩 (재정의)
+        System.out.println("컴퓨터 전원 상태: " + ((powerState) ? "켜짐" : "꺼짐"));
+    }
+
+void showDeviceState() { //★★★★오버라이딩 (재정의)
+        System.out.print("컴퓨터");
+        super.showDeviceState();

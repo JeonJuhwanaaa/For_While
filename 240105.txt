@@ -1,0 +1,46 @@
+<<class>> 
+
+if (("1".equals(selectedMenu))) { //1이라는 값과 select 값이 같다면 선택
+
+            }else  if("q".equalsIgnoreCase(selectedMenu)) { //equalsIgnoreCase = 대.소문자 구분없이 같으면 참
+                break;
+            }else {
+                System.out.println("다시 선택하세요.");
+            } 
+
+switch (selectedMenu) {
+                case "1": // "1"일때 브레이크
+                    break;
+                case "q": // "q"일때 브레이크 , case 는 대.소문자 구분해서 다 입력해주기
+                    break;
+                case "Q":
+                    break;
+                default:
+                    System.out.println("다시 선택하세요.");
+
+
+
+while (true) {
+            System.out.print("회원코드: ");
+            code = scanner.nextLine();
+            if(!code.isBlank()) { //코드는 절대 null 값이 나올수 없으므로(??) isBlank( = 띄어쓰기 ,공백 체크용 메소드) 쓰기
+                break; // 비어있지 않다면 break 걸어라
+                
+            }
+        }
+        while (true) {
+            System.out.print("이름: ");
+            name = scanner.nextLine();
+            if (!name.isBlank()) {
+                break;
+            }
+        }
+        
+        System.out.print("나이: ");
+        age = scanner.nextLine();
+        
+        System.out.print("주소: ");
+        address = scanner.nextLine();
+
+<<배열>>
+*index - 무조건 0~부터
